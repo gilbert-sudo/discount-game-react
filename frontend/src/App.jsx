@@ -4,13 +4,15 @@ import Navbar from './components/layout/Navbar';
 import HeroCarousel from './components/home/HeroCarousel';
 import CategoryLinks from './components/home/CategoryLinks';
 import TrendingDeals from './components/home/TrendingDeals';
-import TradeFairs from './components/home/TradeFairs';
+import Newsletter from './components/home/Newsletter';
 import Reviews from './components/home/Reviews';
 import Footer from './components/layout/Footer';
+import FloatingDock from './components/layout/FloatingDock';
 
 function App() {
   return (
-    <div className="antialiased overflow-x-hidden selection:bg-[#c000ff] selection:text-white text-slate-900 dark:text-slate-50 transition-colors duration-300 relative min-h-screen flex flex-col">
+    <div className="antialiased selection:bg-[#c000ff] selection:text-white text-slate-900 dark:text-slate-50 transition-colors duration-300 relative min-h-screen flex flex-col">
+      <FloatingDock />
       
       {/* Gaming Background */}
       <div className="fixed inset-0 z-[-1] pointer-events-none">
@@ -29,7 +31,7 @@ function App() {
         <HeroCarousel />
         <CategoryLinks />
         <TrendingDeals />
-        <TradeFairs />
+        <Newsletter />
         <Reviews />
       </main>
 

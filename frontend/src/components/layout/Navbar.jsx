@@ -7,7 +7,8 @@ const Navbar = () => {
 
   return (
     <>
-      <header className="w-full bg-white/95 dark:bg-dark-bg/95 backdrop-blur-md border-b border-slate-200 dark:border-white/10 sticky top-0 z-50 transition-colors duration-300">
+      {/* Main Sticky Navbar */}
+      <div className="sticky top-0 z-[60] w-full self-start bg-white/95 dark:bg-dark-bg/95 backdrop-blur-md border-b border-slate-200 dark:border-white/10 transition-colors duration-300">
         <div className="max-w-[1600px] mx-auto px-4 lg:px-8 py-4 flex items-center justify-between gap-3 sm:gap-6">
           
           {/* Logo */}
@@ -75,6 +76,7 @@ const Navbar = () => {
             </a>
           </div>
         </div>
+      </div>
 
         {/* Secondary Nav (Categories) */}
         <nav className="w-full bg-slate-50 dark:bg-[#111827] border-t border-slate-200 dark:border-white/5 py-3 hidden md:block transition-colors duration-300 overflow-x-auto no-scrollbar">
@@ -93,7 +95,6 @@ const Navbar = () => {
             </a>
           </div>
         </nav>
-      </header>
 
       {/* Mobile Search */}
       <div className="md:hidden p-4 bg-white dark:bg-dark-bg border-b border-slate-200 dark:border-white/10 transition-colors duration-300">
