@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-dark-bg: #0B0F19;
+  --color-dark-nav: #06090F;
+  --color-dark-card: #111827;
+  --color-dark-hover: #1e293b;
+
+  --font-sans: "Inter", sans-serif;
+  --font-display: "Rajdhani", sans-serif;
+}
+
+body {
+  font-family: var(--font-sans);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.market-card {
+  transition: all 0.3s ease;
+}
+.market-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px -10px rgba(192, 0, 255, 0.25);
+}
+
+.text-gradient {
+  background: linear-gradient(to right, #c000ff, #a855f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.bg-gradient-border {
+  background: linear-gradient(var(--bg-color, white), var(--bg-color, white)) padding-box,
+              linear-gradient(to right, #c000ff, #a855f7) border-box;
+  border: 1px solid transparent;
+}
+.dark .bg-gradient-border {
+  --bg-color: #111827;
+}
