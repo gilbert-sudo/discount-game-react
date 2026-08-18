@@ -10,12 +10,14 @@ import LoginModal from './components/auth/LoginModal';
 import SignupModal from './components/auth/SignupModal';
 import ForgotPasswordModal from './components/auth/ForgotPasswordModal';
 import SearchModal from './components/layout/SearchModal';
+import WhatsAppButton from './components/layout/WhatsAppButton';
 
 function App() {
   return (
       <Router>
       <div className="antialiased selection:bg-[#FF4D5A] selection:text-white text-slate-900 dark:text-slate-50 transition-colors duration-300 relative min-h-screen flex flex-col">
         <FloatingDock />
+        <WhatsAppButton />
         <LoginModal />
         <SignupModal />
         <ForgotPasswordModal />
