@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { useAuth } from '../../contexts/AuthContext';
+import { useDispatch, useSelector } from 'react-redux';
+import { closeLoginModal, openSignupModal, openForgotPasswordModal } from '../../store/slices/authSlice';
 import { Mail, Lock, X, MoveRight, Eye, EyeOff } from 'lucide-react';
 
 const LoginModal = () => {
-  const { isLoginModalOpen, closeLoginModal, openSignupModal, openForgotPasswordModal } = useAuth();
+  const dispatch = useDispatch();
+  const isLoginModalOpen = useSelector((state) => state.auth.isLoginModalOpen);
   const [showPassword, setShowPassword] = useState(false);
 
   // Prevent scroll when modal is open
@@ -25,7 +27,7 @@ const LoginModal = () => {
       {/* Backdrop */}
       <div 
         className="absolute inset-0 bg-slate-900/40 dark:bg-[#1A2530]/80 animate-backdrop-fade"
-        onClick={closeLoginModal}
+        onClick={() => dispatch(closeLoginModal())}
       />
 
       {/* Modal */}
@@ -33,7 +35,7 @@ const LoginModal = () => {
         
         {/* Close Button */}
         <button 
-          onClick={closeLoginModal}
+          onClick={() => dispatch(closeLoginModal())}
           className="absolute top-5 right-5 p-2 bg-slate-100 dark:bg-dark-hover hover:bg-slate-200 dark:hover:bg-[#435A73] text-slate-500 dark:text-slate-400 rounded-full transition-colors z-20"
         >
           <X className="w-5 h-5" />
@@ -111,7 +113,7 @@ const LoginModal = () => {
                 </div>
                 <span className="text-sm text-slate-600 dark:text-slate-400">Se souvenir de moi</span>
               </label>
-              <button type="button" onClick={openForgotPasswordModal} className="text-sm font-medium text-[#FF4D5A] hover:text-[#E63946] transition-colors">
+              <button type="button" onClick={() => dispatch(openForgotPasswordModal())} className="text-sm font-medium text-[#FF4D5A] hover:text-[#E63946] transition-colors">
                 Mot de passe oublié ?
               </button>
             </div>
@@ -127,7 +129,7 @@ const LoginModal = () => {
 
           <div className="mt-8 text-center text-sm text-slate-500 dark:text-slate-400">
             Nouveau sur Discount Game ?{' '}
-            <button type="button" onClick={openSignupModal} className="font-bold text-slate-900 dark:text-white hover:text-[#FF4D5A] dark:hover:text-[#FF4D5A] transition-colors">
+            <button type="button" onClick={() => dispatch(openSignupModal())} className="font-bold text-slate-900 dark:text-white hover:text-[#FF4D5A] dark:hover:text-[#FF4D5A] transition-colors">
               Créer un compte
             </button>
           </div>

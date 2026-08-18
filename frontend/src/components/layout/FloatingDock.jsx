@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Home, Search, LayoutGrid, ShoppingCart, User, X, ChevronRight, Flame, Gamepad2, Disc, Film, Wand2, Music, Briefcase } from 'lucide-react';
+import { useDispatch } from 'react-redux';
+import { openSearch } from '../../store/slices/searchSlice';
 
 const FloatingDock = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const dispatch = useDispatch();
   
   // Handle scroll to show/hide dock
   useEffect(() => {
@@ -68,7 +71,7 @@ const FloatingDock = () => {
 
   const navItems = [
     { icon: Home, label: 'Accueil', to: '/' },
-    { icon: Search, label: 'Recherche', href: '#' },
+    { icon: Search, label: 'Recherche', onClick: () => dispatch(openSearch()) },
     { icon: LayoutGrid, label: 'Catégories', onClick: toggleMenu, isSpecial: true },
     { icon: ShoppingCart, label: 'Panier', href: '#', badge: '0' },
     { icon: User, label: 'Compte', href: '#' },
@@ -143,7 +146,8 @@ const FloatingDock = () => {
       {/* Floating Dock */}
       <div 
         className={`fixed bottom-2 md:bottom-6 left-1/2 -translate-x-1/2 z-[90] transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)]
-          ${isVisible ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-16 opacity-0 scale-95 pointer-events-none'}
+          translate-y-0 opacity-100 scale-100 pointer-events-auto
+          ${!isVisible ? 'md:translate-y-16 md:opacity-0 md:scale-95 md:pointer-events-none' : ''}
         `}
       >
         <div className="flex items-center gap-2 p-2 rounded-full bg-white/90 dark:bg-[#35485E]/90 backdrop-blur-xl border border-slate-200/50 dark:border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.12)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.4)] dock-container">
@@ -177,6 +181,7 @@ const FloatingDock = () => {
                   </a>
                 ) : (
                   <button 
+                    type="button"
                     onClick={item.onClick}
                     className={`flex items-center justify-center w-12 h-12 rounded-full transition-colors relative ${
                       item.isSpecial 

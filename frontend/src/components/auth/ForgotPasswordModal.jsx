@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react';
-import { useAuth } from '../../contexts/AuthContext';
+import { useDispatch, useSelector } from 'react-redux';
+import { closeForgotPasswordModal, openLoginModal } from '../../store/slices/authSlice';
 import { Mail, X, MoveRight, ArrowLeft } from 'lucide-react';
 
 const ForgotPasswordModal = () => {
-  const { isForgotPasswordModalOpen, closeForgotPasswordModal, openLoginModal } = useAuth();
+  const dispatch = useDispatch();
+  const isForgotPasswordModalOpen = useSelector((state) => state.auth.isForgotPasswordModalOpen);
 
   useEffect(() => {
     if (isForgotPasswordModalOpen) {
@@ -21,13 +23,13 @@ const ForgotPasswordModal = () => {
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
       {/* Backdrop */}
-      <div className="absolute inset-0 bg-slate-900/40 dark:bg-[#1A2530]/80 animate-backdrop-fade" onClick={closeForgotPasswordModal} />
+      <div className="absolute inset-0 bg-slate-900/40 dark:bg-[#1A2530]/80 animate-backdrop-fade" onClick={() => dispatch(closeForgotPasswordModal())} />
 
       {/* Modal */}
       <div className="relative w-full max-w-[850px] bg-white dark:bg-dark-bg rounded-[3rem] shadow-2xl overflow-hidden animate-modal-pop border border-slate-100 dark:border-white/10 flex flex-col md:flex-row">
         
         {/* Close Button */}
-        <button onClick={closeForgotPasswordModal} className="absolute top-5 right-5 p-2 bg-slate-100 dark:bg-dark-hover hover:bg-slate-200 dark:hover:bg-[#435A73] text-slate-500 dark:text-slate-400 rounded-full transition-colors z-20">
+        <button onClick={() => dispatch(closeForgotPasswordModal())} className="absolute top-5 right-5 p-2 bg-slate-100 dark:bg-dark-hover hover:bg-slate-200 dark:hover:bg-[#435A73] text-slate-500 dark:text-slate-400 rounded-full transition-colors z-20">
           <X className="w-5 h-5" />
         </button>
 
@@ -68,7 +70,7 @@ const ForgotPasswordModal = () => {
           </form>
 
           <div className="mt-8 text-center text-sm">
-            <button type="button" onClick={openLoginModal} className="font-bold text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors flex items-center justify-center gap-2 mx-auto group">
+            <button type="button" onClick={() => dispatch(openLoginModal())} className="font-bold text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors flex items-center justify-center gap-2 mx-auto group">
               <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
               Retour à la connexion
             </button>

@@ -2,11 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronDown, Search, Moon, Sun, Bell, Heart, User, ShoppingCart, Menu, Flame } from 'lucide-react';
 import { useDarkMode } from '../../hooks/useDarkMode';
-import { useAuth } from '../../contexts/AuthContext';
+import { useDispatch } from 'react-redux';
+import { openLoginModal } from '../../store/slices/authSlice';
+import { openSearch } from '../../store/slices/searchSlice';
 
 const Navbar = () => {
   const [isDark, toggleDarkMode] = useDarkMode();
-  const { openLoginModal } = useAuth();
+  const dispatch = useDispatch();
 
   return (
     <>
@@ -26,15 +28,24 @@ const Navbar = () => {
 
           {/* Search Bar */}
           <div className="flex-grow max-w-2xl relative hidden md:flex items-center group mx-2 lg:mx-6">
-            <div className="absolute left-0 top-0 bottom-0 bg-slate-100 dark:bg-dark-hover border-r border-slate-300 dark:border-white/10 rounded-l-full flex items-center px-4 lg:px-6 cursor-pointer hover:bg-slate-200 dark:hover:bg-[#334155] transition-colors z-10 text-sm font-medium text-slate-700 dark:text-slate-300">
+            <button 
+              type="button"
+              onClick={() => dispatch(openSearch())}
+              className="absolute left-0 top-0 bottom-0 bg-slate-100 dark:bg-dark-hover border-r border-slate-300 dark:border-white/10 rounded-l-full flex items-center px-4 lg:px-6 cursor-pointer hover:bg-slate-200 dark:hover:bg-[#334155] transition-colors z-10 text-sm font-medium text-slate-700 dark:text-slate-300"
+            >
               <span className="hidden lg:inline">Tout</span> <ChevronDown className="w-4 h-4 ml-1" />
-            </div>
-            <input 
-              type="text" 
-              placeholder="Rechercher..." 
-              className="w-full bg-white dark:bg-dark-nav border border-slate-300 dark:border-white/10 rounded-full py-2.5 lg:py-3.5 pl-14 lg:pl-28 pr-12 lg:pr-16 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 outline-none focus:border-[#FF4D5A] dark:focus:border-[#FF4D5A] focus:ring-2 focus:ring-[#FF4D5A]/20 transition-all shadow-sm dark:shadow-none"
-            />
-            <button className="absolute right-1 top-1 bottom-1 bg-[#FF4D5A] hover:bg-[#E63946] dark:hover:bg-white transition-colors rounded-full px-3 lg:px-5 flex items-center justify-center text-white dark:hover:text-[#2A3B50]">
+            </button>
+            <button
+              type="button"
+              onClick={() => dispatch(openSearch())}
+              className="w-full text-left bg-white dark:bg-dark-nav border border-slate-300 dark:border-white/10 rounded-full py-2.5 lg:py-3.5 pl-14 lg:pl-28 pr-12 lg:pr-16 text-sm text-slate-400 dark:text-slate-500 outline-none hover:border-[#FF4D5A]/50 dark:hover:border-[#FF4D5A]/50 transition-all shadow-sm dark:shadow-none flex items-center justify-between"
+            >
+              <span>Rechercher des jeux, films...</span>
+              <kbd className="hidden lg:flex items-center gap-1 font-sans text-xs bg-slate-100 dark:bg-dark-hover border border-slate-200 dark:border-white/10 px-2 py-0.5 rounded text-slate-500">
+                <span className="text-sm leading-none">⌘</span>K
+              </kbd>
+            </button>
+            <button type="button" onClick={() => dispatch(openSearch())} className="absolute right-1 top-1 bottom-1 bg-[#FF4D5A] hover:bg-[#E63946] dark:hover:bg-white transition-colors rounded-full px-3 lg:px-5 flex items-center justify-center text-white dark:hover:text-[#2A3B50]">
               <Search className="w-4 h-4 lg:w-5 lg:h-5 font-bold" />
             </button>
           </div>
@@ -61,7 +72,7 @@ const Navbar = () => {
             <a href="#" className="hidden lg:flex flex-col items-center text-slate-500 dark:text-slate-400 hover:text-[#FF4D5A] dark:hover:text-[#FF4D5A] transition-colors p-2 rounded-full hover:bg-slate-100 dark:hover:bg-dark-hover">
               <Heart className="w-6 h-6" />
             </a>
-            <button type="button" onClick={openLoginModal} className="flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors border-l border-slate-300 dark:border-white/10 pl-2 lg:pl-5 ml-1 text-left">
+            <button type="button" onClick={() => dispatch(openLoginModal())} className="flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors border-l border-slate-300 dark:border-white/10 pl-2 lg:pl-5 ml-1 text-left">
               <div className="w-8 h-8 lg:w-10 lg:h-10 rounded-full border-2 border-slate-200 dark:border-white/20 bg-slate-100 dark:bg-dark-hover flex items-center justify-center shrink-0">
                 <User className="w-4 h-4 lg:w-5 lg:h-5" />
               </div>
@@ -101,10 +112,12 @@ const Navbar = () => {
 
       {/* Mobile Search */}
       <div className="md:hidden p-4 bg-white dark:bg-dark-bg border-b border-slate-200 dark:border-white/10 transition-colors duration-300">
-        <div className="relative">
-          <input type="text" placeholder="Rechercher..." className="w-full bg-slate-100 dark:bg-dark-card border border-slate-300 dark:border-white/10 rounded-full py-3 px-4 pl-12 text-sm text-slate-900 dark:text-white outline-none focus:border-[#FF4D5A]" />
-          <Search className="w-5 h-5 absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 dark:text-slate-500" />
-        </div>
+        <button type="button" onClick={() => dispatch(openSearch())} className="relative w-full group">
+          <div className="w-full text-left bg-slate-100 dark:bg-dark-card border border-slate-300 dark:border-white/10 rounded-full py-3 px-4 pl-12 text-sm text-slate-500 dark:text-slate-400 group-hover:border-[#FF4D5A]/50 transition-colors">
+            Rechercher...
+          </div>
+          <Search className="w-5 h-5 absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 dark:text-slate-500 group-hover:text-[#FF4D5A] transition-colors" />
+        </button>
       </div>
     </>
   );

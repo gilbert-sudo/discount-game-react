@@ -9,15 +9,17 @@ import ProductDetails from './pages/ProductDetails';
 import LoginModal from './components/auth/LoginModal';
 import SignupModal from './components/auth/SignupModal';
 import ForgotPasswordModal from './components/auth/ForgotPasswordModal';
+import SearchModal from './components/layout/SearchModal';
 
 function App() {
   return (
-    <Router>
+      <Router>
       <div className="antialiased selection:bg-[#FF4D5A] selection:text-white text-slate-900 dark:text-slate-50 transition-colors duration-300 relative min-h-screen flex flex-col">
         <FloatingDock />
         <LoginModal />
         <SignupModal />
         <ForgotPasswordModal />
+        <SearchModal />
         
         {/* Gaming Background */}
         <div className="fixed inset-0 z-[-1] pointer-events-none">
@@ -41,7 +43,7 @@ function App() {
 
         <Footer />
       </div>
-    </Router>
+      </Router>
   );
 }
 

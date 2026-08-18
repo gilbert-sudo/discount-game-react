@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { useAuth } from '../../contexts/AuthContext';
+import { useDispatch, useSelector } from 'react-redux';
+import { closeSignupModal, openLoginModal } from '../../store/slices/authSlice';
 import { Mail, Lock, X, MoveRight, User, Calendar, Tag, Eye, EyeOff } from 'lucide-react';
 
 const SignupModal = () => {
-  const { isSignupModalOpen, closeSignupModal, openLoginModal } = useAuth();
+  const dispatch = useDispatch();
+  const isSignupModalOpen = useSelector((state) => state.auth.isSignupModalOpen);
   const [showPassword, setShowPassword] = useState(false);
 
   useEffect(() => {
@@ -21,11 +23,11 @@ const SignupModal = () => {
 
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
-      <div className="absolute inset-0 bg-slate-900/40 dark:bg-[#1A2530]/80 animate-backdrop-fade" onClick={closeSignupModal} />
+      <div className="absolute inset-0 bg-slate-900/40 dark:bg-[#1A2530]/80 animate-backdrop-fade" onClick={() => dispatch(closeSignupModal())} />
 
       <div className="relative w-full max-w-[950px] max-h-[95vh] bg-white dark:bg-dark-bg rounded-[3rem] shadow-2xl overflow-hidden animate-modal-pop border border-slate-100 dark:border-white/10 flex flex-col md:flex-row">
         
-        <button onClick={closeSignupModal} className="absolute top-5 right-5 p-2 bg-slate-100 dark:bg-dark-hover hover:bg-slate-200 dark:hover:bg-[#435A73] text-slate-500 dark:text-slate-400 rounded-full transition-colors z-20">
+        <button onClick={() => dispatch(closeSignupModal())} className="absolute top-5 right-5 p-2 bg-slate-100 dark:bg-dark-hover hover:bg-slate-200 dark:hover:bg-[#435A73] text-slate-500 dark:text-slate-400 rounded-full transition-colors z-20">
           <X className="w-5 h-5" />
         </button>
 
@@ -48,7 +50,7 @@ const SignupModal = () => {
             <h2 className="text-2xl font-display font-bold text-slate-900 dark:text-white mb-2">Créer votre compte</h2>
             <p className="text-sm text-slate-500 dark:text-slate-400">
               Vous avez déjà un compte ?{' '}
-              <button type="button" onClick={openLoginModal} className="font-bold text-[#FF4D5A] hover:text-[#E63946] transition-colors">
+              <button type="button" onClick={() => dispatch(openLoginModal())} className="font-bold text-[#FF4D5A] hover:text-[#E63946] transition-colors">
                 Connectez-vous !
               </button>
             </p>
