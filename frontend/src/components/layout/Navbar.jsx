@@ -2,13 +2,16 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronDown, Search, Moon, Sun, Bell, Heart, User, ShoppingCart, Menu, Flame } from 'lucide-react';
 import { useDarkMode } from '../../hooks/useDarkMode';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { openLoginModal } from '../../store/slices/authSlice';
 import { openSearch } from '../../store/slices/searchSlice';
+import { selectCartItemCount, selectCartTotal, openCart } from '../../store/slices/cartSlice';
 
 const Navbar = () => {
   const [isDark, toggleDarkMode] = useDarkMode();
   const dispatch = useDispatch();
+  const itemCount = useSelector(selectCartItemCount);
+  const cartTotal = useSelector(selectCartTotal);
 
   return (
     <>
@@ -81,13 +84,17 @@ const Navbar = () => {
                 <p className="font-bold text-slate-900 dark:text-white">Mon Compte</p>
               </div>
             </button>
-            <a href="#" className="flex items-center gap-2 lg:gap-3 bg-slate-100 dark:bg-dark-hover hover:bg-slate-200 dark:hover:bg-[#334155] border border-slate-200 dark:border-white/10 py-1.5 lg:py-2.5 px-3 lg:px-5 rounded-full transition-colors ml-1">
+            <button onClick={() => dispatch(openCart())} className="flex items-center gap-2 lg:gap-3 bg-slate-100 dark:bg-dark-hover hover:bg-slate-200 dark:hover:bg-[#334155] border border-slate-200 dark:border-white/10 py-1.5 lg:py-2.5 px-3 lg:px-5 rounded-full transition-colors ml-1">
               <div className="relative">
                 <ShoppingCart className="w-4 h-4 lg:w-5 lg:h-5 text-slate-700 dark:text-white" />
-                <span className="absolute -top-1.5 -right-1.5 lg:-top-2 lg:-right-2 w-3.5 h-3.5 lg:w-4 lg:h-4 bg-[#FF4D5A] rounded-full text-[0.55rem] lg:text-[0.65rem] font-bold text-white flex items-center justify-center">0</span>
+                {itemCount > 0 && (
+                  <span className="absolute -top-1.5 -right-1.5 lg:-top-2 lg:-right-2 w-3.5 h-3.5 lg:w-4 lg:h-4 bg-[#FF4D5A] rounded-full text-[0.55rem] lg:text-[0.65rem] font-bold text-white flex items-center justify-center">
+                    {itemCount}
+                  </span>
+                )}
               </div>
-              <span className="font-bold text-sm hidden xl:block text-slate-900 dark:text-white">0,00 €</span>
-            </a>
+              <span className="font-bold text-sm hidden xl:block text-slate-900 dark:text-white">{cartTotal.toFixed(2).replace('.', ',')} €</span>
+            </button>
           </div>
         </div>
       </div>

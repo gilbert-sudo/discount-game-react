@@ -10,6 +10,7 @@ import LoginModal from './components/auth/LoginModal';
 import SignupModal from './components/auth/SignupModal';
 import ForgotPasswordModal from './components/auth/ForgotPasswordModal';
 import SearchModal from './components/layout/SearchModal';
+import CartModal from './components/layout/CartModal';
 import WhatsAppButton from './components/layout/WhatsAppButton';
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <SignupModal />
         <ForgotPasswordModal />
         <SearchModal />
+        <CartModal />
         
         {/* Gaming Background */}
         <div className="fixed inset-0 z-[-1] pointer-events-none">

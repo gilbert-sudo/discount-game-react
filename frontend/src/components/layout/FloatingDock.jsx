@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Home, Search, LayoutGrid, ShoppingCart, User, X, ChevronRight, Flame, Gamepad2, Disc, Film, Wand2, Music, Briefcase } from 'lucide-react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { openSearch } from '../../store/slices/searchSlice';
+import { selectCartItemCount, openCart } from '../../store/slices/cartSlice';
 
 const FloatingDock = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const dispatch = useDispatch();
+  const itemCount = useSelector(selectCartItemCount);
   
   // Handle scroll to show/hide dock
   useEffect(() => {
@@ -73,7 +75,7 @@ const FloatingDock = () => {
     { icon: Home, label: 'Accueil', to: '/' },
     { icon: Search, label: 'Recherche', onClick: () => dispatch(openSearch()) },
     { icon: LayoutGrid, label: 'Catégories', onClick: toggleMenu, isSpecial: true },
-    { icon: ShoppingCart, label: 'Panier', href: '#', badge: '0' },
+    { icon: ShoppingCart, label: 'Panier', onClick: () => dispatch(openCart()), badge: itemCount > 0 ? itemCount.toString() : null },
     { icon: User, label: 'Compte', href: '#' },
   ];
 
