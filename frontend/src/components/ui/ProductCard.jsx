@@ -1,7 +1,8 @@
 import React from 'react';
 import { Star, ShoppingCart } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
-const ProductCard = ({ title, price, image, seller, rating, isNew, is4K }) => {
+const ProductCard = ({ id, title, price, image, seller, rating, isNew, is4K }) => {
   return (
     <div className="market-card bg-white dark:bg-dark-card border border-slate-200 dark:border-white/5 rounded-[2rem] overflow-hidden flex flex-col relative shadow-sm dark:shadow-none p-2 h-full">
       {isNew && (
@@ -15,13 +16,13 @@ const ProductCard = ({ title, price, image, seller, rating, isNew, is4K }) => {
         </div>
       )}
       
-      <a href="#" className="aspect-square bg-slate-50 dark:bg-white flex items-center justify-center p-8 relative overflow-hidden rounded-[1.5rem] group">
+      <Link to={`/product/${id || 1}`} className="aspect-square bg-slate-50 dark:bg-white flex items-center justify-center p-8 relative overflow-hidden rounded-[1.5rem] group">
         <img 
           src={image} 
           alt={title} 
           className="object-contain w-full h-full group-hover:scale-110 transition-transform duration-500 mix-blend-multiply"
         />
-      </a>
+      </Link>
       
       <div className="p-5 flex flex-col flex-grow">
         <div className="text-xs text-slate-500 dark:text-slate-400 mb-2 flex justify-between items-center">
@@ -30,9 +31,9 @@ const ProductCard = ({ title, price, image, seller, rating, isNew, is4K }) => {
             <Star className="w-3.5 h-3.5 fill-current mr-1" /> {rating}
           </span>
         </div>
-        <a href="#" className="font-bold text-base leading-tight text-slate-900 dark:text-white hover:text-[#9900cc] dark:hover:text-[#c000ff] transition-colors line-clamp-2 mb-4">
+        <Link to={`/product/${id || 1}`} className="font-bold text-base leading-tight text-slate-900 dark:text-white hover:text-[#9900cc] dark:hover:text-[#c000ff] transition-colors line-clamp-2 mb-4">
           {title}
-        </a>
+        </Link>
         <div className="mt-auto flex items-center justify-between">
           <div className="flex flex-col">
             <span className="text-2xl font-bold text-[#10b981]">{price}</span>

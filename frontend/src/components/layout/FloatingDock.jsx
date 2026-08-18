@@ -141,7 +141,7 @@ const FloatingDock = () => {
 
       {/* Floating Dock */}
       <div 
-        className={`fixed bottom-6 left-1/2 -translate-x-1/2 z-[90] transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)]
+        className={`fixed bottom-2 md:bottom-6 left-1/2 -translate-x-1/2 z-[90] transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)]
           ${isVisible ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-16 opacity-0 scale-95 pointer-events-none'}
         `}
       >
