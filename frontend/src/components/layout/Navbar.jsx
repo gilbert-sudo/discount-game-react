@@ -2,9 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronDown, Search, Moon, Sun, Bell, Heart, User, ShoppingCart, Menu, Flame } from 'lucide-react';
 import { useDarkMode } from '../../hooks/useDarkMode';
+import { useAuth } from '../../contexts/AuthContext';
 
 const Navbar = () => {
   const [isDark, toggleDarkMode] = useDarkMode();
+  const { openLoginModal } = useAuth();
 
   return (
     <>
@@ -59,15 +61,15 @@ const Navbar = () => {
             <a href="#" className="hidden lg:flex flex-col items-center text-slate-500 dark:text-slate-400 hover:text-[#FF4D5A] dark:hover:text-[#FF4D5A] transition-colors p-2 rounded-full hover:bg-slate-100 dark:hover:bg-dark-hover">
               <Heart className="w-6 h-6" />
             </a>
-            <a href="#" className="flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors border-l border-slate-300 dark:border-white/10 pl-2 lg:pl-5 ml-1">
-              <div className="w-8 h-8 lg:w-10 lg:h-10 rounded-full border-2 border-slate-200 dark:border-white/20 bg-slate-100 dark:bg-dark-hover flex items-center justify-center">
+            <button type="button" onClick={openLoginModal} className="flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors border-l border-slate-300 dark:border-white/10 pl-2 lg:pl-5 ml-1 text-left">
+              <div className="w-8 h-8 lg:w-10 lg:h-10 rounded-full border-2 border-slate-200 dark:border-white/20 bg-slate-100 dark:bg-dark-hover flex items-center justify-center shrink-0">
                 <User className="w-4 h-4 lg:w-5 lg:h-5" />
               </div>
               <div className="hidden xl:block text-xs">
                 <p className="text-slate-500 font-medium">Connexion</p>
                 <p className="font-bold text-slate-900 dark:text-white">Mon Compte</p>
               </div>
-            </a>
+            </button>
             <a href="#" className="flex items-center gap-2 lg:gap-3 bg-slate-100 dark:bg-dark-hover hover:bg-slate-200 dark:hover:bg-[#334155] border border-slate-200 dark:border-white/10 py-1.5 lg:py-2.5 px-3 lg:px-5 rounded-full transition-colors ml-1">
               <div className="relative">
                 <ShoppingCart className="w-4 h-4 lg:w-5 lg:h-5 text-slate-700 dark:text-white" />
