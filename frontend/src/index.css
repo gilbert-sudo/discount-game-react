@@ -3,10 +3,30 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  --color-dark-bg: #0B0F19;
-  --color-dark-nav: #06090F;
-  --color-dark-card: #111827;
-  --color-dark-hover: #1e293b;
+  --color-dark-bg: #2A3B50;
+  --color-dark-nav: #35485E;
+  --color-dark-card: #35485E;
+  --color-dark-hover: #435A73;
+
+  /* Theme color mapping */
+  --color-white: #ffffff;
+  --color-slate-50: #F4F6F8;
+  --color-slate-100: #EAF0F4;
+  --color-slate-200: #DFE8EF;
+  
+  --color-slate-900: #2A3B50;
+  --color-slate-800: #35485E;
+
+  --color-purple-400: #FF7582;
+  --color-purple-500: #FF4D5A;
+  --color-purple-600: #E63946;
+
+  --color-pink-400: #FF7582;
+  --color-pink-500: #FF4D5A;
+  --color-pink-600: #E63946;
+
+  --color-blue-500: #FF4D5A;
+  --color-blue-600: #E63946;
 
   --font-sans: "Inter", sans-serif;
   --font-display: "Rajdhani", sans-serif;
@@ -29,21 +49,21 @@ body {
 }
 .market-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 15px 35px -10px rgba(192, 0, 255, 0.25);
+  box-shadow: 0 15px 35px -10px rgba(255, 77, 90, 0.25);
 }
 
 .text-gradient {
-  background: linear-gradient(to right, #c000ff, #a855f7);
+  background: linear-gradient(to right, #FF4D5A, #FF7582);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 .bg-gradient-border {
   background: linear-gradient(var(--bg-color, white), var(--bg-color, white)) padding-box,
-              linear-gradient(to right, #c000ff, #a855f7) border-box;
+              linear-gradient(to right, #FF4D5A, #FF7582) border-box;
   border: 1px solid transparent;
 }
 .dark .bg-gradient-border {
-  --bg-color: #111827;
+  --bg-color: #35485E;
 }
 
 /* Floating Dock Magnification Effect */

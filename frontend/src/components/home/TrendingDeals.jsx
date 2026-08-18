@@ -56,14 +56,14 @@ const TrendingDeals = () => {
     <section>
       <div className="flex items-center justify-between mb-8 border-b border-slate-200 dark:border-white/5 pb-4 pl-2">
         <div className="flex items-center gap-3">
-          <div className="p-2 bg-[#ff4655]/10 rounded-full text-[#ff4655]">
+          <div className="p-2 bg-[#FF4D5A]/10 rounded-full text-[#FF4D5A]">
             <Zap className="w-6 h-6" />
           </div>
           <h2 className="text-3xl font-display font-bold uppercase tracking-wider text-slate-900 dark:text-white">
             Arrivages du jour
           </h2>
         </div>
-        <a href="#" className="text-sm font-bold text-[#c000ff] hover:text-slate-900 dark:hover:text-white flex items-center gap-1 transition-colors bg-[#c000ff]/10 px-4 py-2 rounded-full">
+        <a href="#" className="text-sm font-bold text-[#FF4D5A] hover:text-slate-900 dark:hover:text-white flex items-center gap-1 transition-colors bg-[#FF4D5A]/10 px-4 py-2 rounded-full">
           Tout voir <ArrowRight className="w-4 h-4" />
         </a>
       </div>

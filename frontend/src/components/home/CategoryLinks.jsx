@@ -9,7 +9,7 @@ const categories = [
   { name: 'Blu-Ray', icon: Disc3, color: '#005CB9', image: 'https://images.unsplash.com/photo-1594909122845-11baa439b7bf?auto=format&fit=crop&q=80&w=600' },
   { name: 'DVD', icon: Disc, color: '#333333', image: 'https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&q=80&w=600' },
   { name: 'Musique', icon: Headphones, color: '#1DB954', image: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&q=80&w=600' },
-  { name: 'Déstockage', icon: Flame, color: '#ff4655', isDestockage: true, image: 'https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?auto=format&fit=crop&q=80&w=600' }
+  { name: 'Déstockage', icon: Flame, color: '#FF4D5A', isDestockage: true, image: 'https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?auto=format&fit=crop&q=80&w=600' }
 ];
 
 const CategoryLinks = () => {
@@ -32,7 +32,7 @@ const CategoryLinks = () => {
               key={index} 
               href="#" 
               className={`relative group overflow-hidden rounded-3xl flex-shrink-0 w-[140px] h-[180px] sm:w-[160px] sm:h-[200px] md:w-auto md:h-[160px] lg:h-[180px] xl:h-[200px] snap-start shadow-md hover:-translate-y-2 transition-all duration-300
-                ${cat.isDestockage ? 'ring-2 ring-[#ff4655] shadow-[#ff4655]/20' : ''}
+                ${cat.isDestockage ? 'ring-2 ring-[#FF4D5A] shadow-[#FF4D5A]/20' : ''}
               `}
             >
               {/* Background Image */}
@@ -57,7 +57,7 @@ const CategoryLinks = () => {
                   {cat.name}
                 </span>
                 {cat.isDestockage && (
-                  <span className="text-xs font-semibold text-[#ff4655] bg-white/90 px-2 py-0.5 rounded-full mt-2 w-max inline-block shadow-sm">
+                  <span className="text-xs font-semibold text-[#FF4D5A] bg-white/90 px-2 py-0.5 rounded-full mt-2 w-max inline-block shadow-sm">
                     Offres chaudes
                   </span>
                 )}

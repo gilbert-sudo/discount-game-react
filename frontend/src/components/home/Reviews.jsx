@@ -40,10 +40,10 @@ const Reviews = () => {
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {reviewsData.map((review) => (
-          <div key={review.id} className="bg-white dark:bg-dark-card border border-slate-200 dark:border-white/5 rounded-3xl p-8 flex flex-col hover:border-[#8b5cf6]/50 dark:hover:border-[#a855f7]/50 transition-colors cursor-pointer group shadow-sm dark:shadow-none hover:-translate-y-1">
+          <div key={review.id} className="bg-white dark:bg-dark-card border border-slate-200 dark:border-white/5 rounded-3xl p-8 flex flex-col hover:border-[#FF4D5A]/50 dark:hover:border-[#FF7582]/50 transition-colors cursor-pointer group shadow-sm dark:shadow-none hover:-translate-y-1">
             <div className="flex items-center gap-1 mb-4">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-5 h-5 fill-[#ff4655] text-[#ff4655]" />
+                <Star key={i} className="w-5 h-5 fill-[#FF4D5A] text-[#FF4D5A]" />
               ))}
             </div>
             <h3 className="font-bold text-lg text-slate-900 dark:text-white mb-3">{review.title}</h3>

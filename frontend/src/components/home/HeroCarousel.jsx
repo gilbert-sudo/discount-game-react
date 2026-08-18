@@ -28,13 +28,13 @@ const HeroCarousel = () => {
       >
         
         {/* Slide 1: Jeux Vidéo */}
-        <div className="min-w-full h-full relative shrink-0 bg-[#0B0F19] overflow-hidden group">
-          <img src="https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?q=80&w=1600&auto=format&fit=crop" className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" alt="Slide 1 bg" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0B0F19] via-[#0B0F19]/80 to-transparent"></div>
+        <div className="min-w-full h-full relative shrink-0 bg-[#2A3B50] overflow-hidden group">
+          <img src="https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?q=80&w=1600&auto=format&fit=crop" className="absolute inset-0 w-full h-full object-cover opacity-100 group-hover:scale-105 transition-transform duration-700" alt="Slide 1 bg" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#2A3B50] via-[#2A3B50]/80 to-transparent"></div>
           
           <div className="absolute inset-0 z-10 p-4 sm:p-8 lg:p-16 flex flex-col justify-center max-w-5xl">
             <div className="flex items-center gap-2 sm:gap-4 mb-4 sm:mb-6 lg:ml-32 scale-75 sm:scale-100 origin-left">
-              <div className="flex flex-col items-center justify-center w-24 h-24 rounded-full border-2 border-purple-500 shadow-[0_0_20px_rgba(168,85,247,0.6)] bg-[#0B0F19]/90 text-center leading-tight transform -rotate-12">
+              <div className="flex flex-col items-center justify-center w-24 h-24 rounded-full border-2 border-purple-500 shadow-[0_0_20px_rgba(255,77,90,0.6)] bg-[#2A3B50]/90 text-center leading-tight transform -rotate-12">
                 <span className="text-white font-bold text-xs">GRAND<br/>CHOIX</span>
                 <span className="text-yellow-400 font-bold text-xs">PETITS<br/>PRIX !</span>
               </div>
@@ -53,7 +53,7 @@ const HeroCarousel = () => {
               </h3>
             </div>
             
-            <a href="#" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white transition-all font-bold uppercase tracking-widest px-6 py-3 sm:px-8 sm:py-4 text-xs sm:text-sm rounded-full w-fit flex items-center gap-2 shadow-[0_0_20px_rgba(37,99,235,0.5)] lg:ml-32 z-20">
+            <a href="#" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white transition-all font-bold uppercase tracking-widest px-6 py-3 sm:px-8 sm:py-4 text-xs sm:text-sm rounded-full w-fit flex items-center gap-2 shadow-[0_0_20px_rgba(255,77,90,0.5)] lg:ml-32 z-20">
               Découvrir le catalogue <Gamepad2 className="w-4 h-4 sm:w-5 sm:h-5" />
             </a>
           </div>
@@ -68,7 +68,7 @@ const HeroCarousel = () => {
             <Gamepad className="w-24 h-24 text-blue-400 filter drop-shadow-[0_0_15px_rgba(96,165,250,0.8)]" />
           </div>
 
-          <div className="absolute bottom-0 left-0 w-full bg-[#06090F]/95 backdrop-blur-xl border-t border-white/10 z-20 py-2 sm:py-3 px-2 sm:px-4 lg:px-12 flex flex-wrap items-center justify-center lg:justify-between gap-2 sm:gap-6 pb-6 sm:pb-3 scale-90 sm:scale-100 origin-bottom">
+          <div className="absolute bottom-0 left-0 w-full bg-[#2A3B50]/95 backdrop-blur-xl border-t border-white/10 z-20 py-2 sm:py-3 px-2 sm:px-4 lg:px-12 flex flex-wrap items-center justify-center lg:justify-between gap-2 sm:gap-6 pb-6 sm:pb-3 scale-90 sm:scale-100 origin-bottom">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded border border-blue-400/50 flex items-center justify-center">
                 <ShieldCheck className="w-5 h-5 text-blue-400" />
@@ -100,14 +100,14 @@ const HeroCarousel = () => {
         </div>
 
         {/* Slide 2: Blu-Ray Offert */}
-        <div className="min-w-full h-full relative shrink-0 bg-[#0B0F19] overflow-hidden group">
-          <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=1600&auto=format&fit=crop" className="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:scale-105 transition-transform duration-700" alt="Slide 2 bg" />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0B0F19] via-blue-900/60 to-red-900/80"></div>
+        <div className="min-w-full h-full relative shrink-0 bg-[#2A3B50] overflow-hidden group">
+          <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=1600&auto=format&fit=crop" className="absolute inset-0 w-full h-full object-cover opacity-100 group-hover:scale-105 transition-transform duration-700" alt="Slide 2 bg" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#2A3B50] via-blue-900/60 to-red-900/80"></div>
           
           <div className="absolute inset-0 z-10 p-4 sm:p-6 lg:p-12 flex flex-col justify-between max-w-7xl mx-auto w-full">
             <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center w-full gap-2 sm:gap-6 mt-2 sm:mt-4 scale-90 sm:scale-100 origin-top">
               
-              <div className="bg-gradient-to-b from-blue-900 to-[#0B0F19] border-2 border-blue-400 rounded-xl p-4 flex items-center gap-4 shadow-[0_0_20px_rgba(59,130,246,0.5)] transform -rotate-2">
+              <div className="bg-gradient-to-b from-blue-900 to-[#2A3B50] border-2 border-blue-400 rounded-xl p-4 flex items-center gap-4 shadow-[0_0_20px_rgba(59,130,246,0.5)] transform -rotate-2">
                 <div className="bg-white text-blue-600 rounded-full p-3"><ThumbsUp className="w-8 h-8 fill-current" /></div>
                 <div className="flex flex-col">
                   <span className="text-white font-black text-2xl uppercase italic leading-none mb-1">Postez<br/>un avis</span>
@@ -130,7 +130,7 @@ const HeroCarousel = () => {
                 </div>
               </div>
 
-              <div className="hidden lg:flex flex-col items-center justify-center w-32 h-32 rounded-full border-2 border-yellow-400 shadow-[0_0_20px_rgba(250,204,21,0.5)] bg-[#0B0F19]/90 text-center leading-tight">
+              <div className="hidden lg:flex flex-col items-center justify-center w-32 h-32 rounded-full border-2 border-yellow-400 shadow-[0_0_20px_rgba(250,204,21,0.5)] bg-[#2A3B50]/90 text-center leading-tight">
                 <Megaphone className="text-red-500 w-6 h-6 mb-1" />
                 <span className="text-white font-bold text-[10px]">VOTRE AVIS<br/>NOUS AIDE,</span>
                 <span className="text-yellow-400 font-black text-[10px]">VOTRE CADEAU<br/>VOUS RÉCOMPENSE !</span>
@@ -163,7 +163,7 @@ const HeroCarousel = () => {
             </div>
           </div>
           
-          <div className="absolute bottom-0 left-0 w-full bg-[#06090F]/95 backdrop-blur-xl border-t border-white/10 z-20 py-3 px-4 lg:px-12 flex flex-wrap items-center justify-center gap-8 pb-8 lg:pb-3">
+          <div className="absolute bottom-0 left-0 w-full bg-[#2A3B50]/95 backdrop-blur-xl border-t border-white/10 z-20 py-3 px-4 lg:px-12 flex flex-wrap items-center justify-center gap-8 pb-8 lg:pb-3">
             <div className="flex items-center gap-3"><ShieldCheck className="w-6 h-6 text-blue-500" /><div className="text-white font-black text-sm uppercase leading-tight">100%<br/>Satisfaction</div></div>
             <div className="flex items-center gap-3"><Lock className="w-6 h-6 text-blue-500" /><div className="text-white font-black text-sm uppercase leading-tight">Paiement<br/>Sécurisé</div></div>
             <div className="flex items-center gap-3"><Truck className="w-6 h-6 text-blue-500" /><div className="text-white font-black text-sm uppercase leading-tight">Expédition<br/>Rapide</div></div>
@@ -173,15 +173,15 @@ const HeroCarousel = () => {
 
         {/* Slide 3: GTA VI */}
         <div className="min-w-full h-full relative shrink-0 bg-slate-900 overflow-hidden group">
-          <img src="https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?q=80&w=1600&auto=format&fit=crop" className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" alt="GTA VI bg" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0B0F19] via-[#0B0F19]/80 to-transparent"></div>
+          <img src="https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?q=80&w=1600&auto=format&fit=crop" className="absolute inset-0 w-full h-full object-cover opacity-100 group-hover:scale-105 transition-transform duration-700" alt="GTA VI bg" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#2A3B50] via-[#2A3B50]/80 to-transparent"></div>
           
           <div className="absolute inset-0 z-10 p-4 sm:p-6 lg:p-12 flex flex-col justify-between max-w-7xl mx-auto w-full">
             <div className="flex flex-col lg:flex-row justify-between w-full h-full">
               <div className="flex flex-col justify-center h-full max-w-xl relative mt-[-20px] sm:mt-[-40px]">
                 <span className="text-white font-bold tracking-widest uppercase mb-1 ml-2 text-sm sm:text-xl drop-shadow">PRÊT POUR</span>
                 <h2 className="text-5xl sm:text-7xl lg:text-[8rem] font-display font-black uppercase italic leading-[0.8] mb-2 relative group-hover:scale-105 transition-transform duration-500">
-                  <span className="text-transparent bg-clip-text bg-gradient-to-b from-white to-pink-200 drop-shadow-[0_0_15px_rgba(236,72,153,0.8)]">GTA</span>
+                  <span className="text-transparent bg-clip-text bg-gradient-to-b from-white to-pink-200 drop-shadow-[0_0_15px_rgba(255,77,90,0.8)]">GTA</span>
                   <span className="text-transparent bg-clip-text bg-gradient-to-t from-pink-500 to-purple-500">VI</span>
                   <span className="text-pink-500">?</span>
                 </h2>
@@ -208,16 +208,16 @@ const HeroCarousel = () => {
 
           <div className="absolute bottom-0 left-0 w-full bg-white z-20 py-2 px-4 lg:px-8 flex flex-wrap items-center justify-between gap-4">
             <div className="flex items-center gap-6">
-              <div className="flex items-center gap-2"><Award className="w-6 h-6 text-[#0B0F19]" /><div className="text-[#0B0F19] font-black text-xs uppercase leading-tight">Top Fiabilité<br/><span className="text-blue-600">discount-game.fr</span></div></div>
-              <div className="flex items-center gap-2"><ThumbsUp className="w-6 h-6 text-[#0B0F19]" /><div className="text-[#0B0F19] font-black text-xs uppercase leading-tight">Postez un avis<br/><span className="text-blue-600">= 10 %</span></div></div>
-              <div className="flex items-center gap-2 hidden lg:flex"><img src="https://flagcdn.com/w20/fr.png" alt="FR" className="w-5 h-auto rounded" /><div className="text-[#0B0F19] font-black text-[10px] uppercase leading-tight">Service Client<br/>Français</div></div>
-              <div className="flex items-center gap-2 hidden lg:flex"><Lock className="w-5 h-5 text-[#0B0F19]" /><div className="text-[#0B0F19] font-black text-[10px] uppercase leading-tight">Paiement<br/>Sécurisé</div></div>
+              <div className="flex items-center gap-2"><Award className="w-6 h-6 text-[#2A3B50]" /><div className="text-[#2A3B50] font-black text-xs uppercase leading-tight">Top Fiabilité<br/><span className="text-blue-600">discount-game.fr</span></div></div>
+              <div className="flex items-center gap-2"><ThumbsUp className="w-6 h-6 text-[#2A3B50]" /><div className="text-[#2A3B50] font-black text-xs uppercase leading-tight">Postez un avis<br/><span className="text-blue-600">= 10 %</span></div></div>
+              <div className="flex items-center gap-2 hidden lg:flex"><img src="https://flagcdn.com/w20/fr.png" alt="FR" className="w-5 h-auto rounded" /><div className="text-[#2A3B50] font-black text-[10px] uppercase leading-tight">Service Client<br/>Français</div></div>
+              <div className="flex items-center gap-2 hidden lg:flex"><Lock className="w-5 h-5 text-[#2A3B50]" /><div className="text-[#2A3B50] font-black text-[10px] uppercase leading-tight">Paiement<br/>Sécurisé</div></div>
             </div>
-            <div className="bg-[#0B0F19] text-white rounded-full pl-5 pr-1.5 py-1.5 flex items-center gap-4 cursor-pointer hover:scale-105 transition-transform border border-white/5 shadow-[0_0_20px_rgba(236,72,153,0.15)] group">
+            <div className="bg-[#2A3B50] text-white rounded-full pl-5 pr-1.5 py-1.5 flex items-center gap-4 cursor-pointer hover:scale-105 transition-transform border border-white/5 shadow-[0_0_20px_rgba(255,77,90,0.15)] group">
               <div className="flex items-center gap-2">
                  <span className="font-bold text-[10px] uppercase tracking-widest text-gray-200 mt-1">Prêt pour</span>
                  <span className="font-black italic text-lg leading-none tracking-tighter">
-                   <span className="text-white drop-shadow-[0_0_10px_rgba(236,72,153,0.8)]">GTA</span>
+                   <span className="text-white drop-shadow-[0_0_10px_rgba(255,77,90,0.8)]">GTA</span>
                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#b964d8] to-[#ea3c7c] ml-1">VI ?</span>
                  </span>
               </div>
@@ -229,9 +229,9 @@ const HeroCarousel = () => {
         </div>
 
         {/* Slide 4: Tirage au sort */}
-        <div className="min-w-full h-full relative shrink-0 bg-[#0B0F19] overflow-hidden group">
-          <img src="https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?q=80&w=1600&auto=format&fit=crop" className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" alt="Tirage bg" />
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#0B0F19]/80 to-[#0B0F19]/90"></div>
+        <div className="min-w-full h-full relative shrink-0 bg-[#2A3B50] overflow-hidden group">
+          <img src="https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?q=80&w=1600&auto=format&fit=crop" className="absolute inset-0 w-full h-full object-cover opacity-100 group-hover:scale-105 transition-transform duration-700" alt="Tirage bg" />
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#2A3B50]/60 to-[#2A3B50]/80"></div>
           
           <div className="absolute inset-0 z-10 p-4 sm:p-6 lg:p-12 flex flex-col justify-between max-w-7xl mx-auto w-full">
             <div className="flex flex-col lg:flex-row justify-end items-center w-full h-full pr-4 sm:pr-8">
@@ -248,7 +248,7 @@ const HeroCarousel = () => {
                 </div>
 
                 <div className="bg-white/10 backdrop-blur-md border border-blue-400/30 rounded-xl p-4 shadow-2xl flex items-center gap-3 mb-4 w-fit ml-auto">
-                  <div className="bg-blue-600 rounded-full p-1.5 shrink-0 shadow-[0_0_15px_rgba(37,99,235,0.8)]"><Check className="text-white w-4 h-4" /></div>
+                  <div className="bg-blue-600 rounded-full p-1.5 shrink-0 shadow-[0_0_15px_rgba(255,77,90,0.8)]"><Check className="text-white w-4 h-4" /></div>
                   <div className="text-left">
                     <div className="text-white font-black uppercase text-sm leading-tight mb-0.5">Votre avis valide votre participation au tirage !</div>
                     <div className="text-blue-200 font-bold text-xs">Tentez de gagner des <span className="text-yellow-400">produits exclusifs !</span></div>
@@ -258,7 +258,7 @@ const HeroCarousel = () => {
             </div>
           </div>
           
-          <div className="absolute bottom-0 left-0 w-full bg-[#0B0F19]/95 backdrop-blur-md border-t border-blue-500/20 z-20 py-3 px-4 lg:px-8 flex flex-wrap items-center justify-around gap-4 pb-8 lg:pb-3 shadow-[0_-10px_30px_rgba(37,99,235,0.1)]">
+          <div className="absolute bottom-0 left-0 w-full bg-[#2A3B50]/95 backdrop-blur-md border-t border-blue-500/20 z-20 py-3 px-4 lg:px-8 flex flex-wrap items-center justify-around gap-4 pb-8 lg:pb-3 shadow-[0_-10px_30px_rgba(255,77,90,0.1)]">
             <div className="flex items-center gap-3">
               <div className="bg-blue-600/20 p-2 rounded-full"><ShieldCheck className="w-5 h-5 text-blue-400" /></div>
               <div className="text-white font-black text-[10px] uppercase leading-tight">Vos avis nous aident<br/><span className="text-blue-400">à nous améliorer</span></div>
@@ -279,9 +279,9 @@ const HeroCarousel = () => {
         </div>
 
         {/* Slide 5: 10% Reduction */}
-        <div className="min-w-full h-full relative shrink-0 bg-[#0B0F19] overflow-hidden group">
-          <img src="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?q=80&w=1600&auto=format&fit=crop" className="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:scale-105 transition-transform duration-700" alt="Reduction bg" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F19] via-[#0B0F19]/80 to-transparent"></div>
+        <div className="min-w-full h-full relative shrink-0 bg-[#2A3B50] overflow-hidden group">
+          <img src="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?q=80&w=1600&auto=format&fit=crop" className="absolute inset-0 w-full h-full object-cover opacity-100 group-hover:scale-105 transition-transform duration-700" alt="Reduction bg" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#2A3B50] via-[#2A3B50]/80 to-transparent"></div>
           
           <div className="absolute inset-0 z-10 p-4 sm:p-6 lg:p-12 flex flex-col justify-center items-center text-center max-w-7xl mx-auto w-full">
             <h2 className="text-3xl sm:text-5xl lg:text-[5rem] font-display font-black uppercase italic leading-[0.85] mb-2 text-white drop-shadow-[0_5px_5px_rgba(0,0,0,0.9)] filter mt-[-20px] sm:mt-[-40px]">
@@ -294,7 +294,7 @@ const HeroCarousel = () => {
             <div className="flex flex-col sm:flex-row items-center gap-4 bg-black/60 px-8 py-4 rounded-full backdrop-blur-md border border-white/10 mb-8 shadow-2xl">
               <span className="text-white font-black text-xl uppercase tracking-wide">À partir de 200€ d'achat</span>
               <div className="w-2 h-2 rounded-full bg-red-500 hidden sm:block"></div>
-              <span className="text-[#c000ff] font-black text-xl uppercase tracking-widest drop-shadow-[0_0_10px_rgba(0,240,255,0.8)]">Frais de port offerts !</span>
+              <span className="text-[#FF4D5A] font-black text-xl uppercase tracking-widest drop-shadow-[0_0_10px_rgba(0,240,255,0.8)]">Frais de port offerts !</span>
             </div>
 
             <div className="bg-white/10 px-8 py-3 rounded-3xl sm:rounded-full border border-white/20 backdrop-blur-md flex flex-col sm:flex-row items-center gap-4 shadow-lg">
@@ -307,7 +307,7 @@ const HeroCarousel = () => {
             </div>
           </div>
           
-          <div className="absolute bottom-0 left-0 w-full bg-[#06090F]/95 backdrop-blur-xl border-t border-white/10 z-20 py-3 px-4 lg:px-8 flex flex-wrap items-center justify-around gap-4 pb-8 lg:pb-3">
+          <div className="absolute bottom-0 left-0 w-full bg-[#2A3B50]/95 backdrop-blur-xl border-t border-white/10 z-20 py-3 px-4 lg:px-8 flex flex-wrap items-center justify-around gap-4 pb-8 lg:pb-3">
             <div className="flex items-center gap-3"><div className="bg-blue-600/20 p-2 rounded-full"><ShieldCheck className="w-5 h-5 text-blue-400" /></div><div className="text-white font-black text-[10px] uppercase leading-tight">Produits<br/><span className="text-blue-400">100% Neufs</span></div></div>
             <div className="flex items-center gap-3 hidden lg:flex"><div className="bg-green-600/20 p-2 rounded-full"><Lock className="w-5 h-5 text-green-400" /></div><div className="text-white font-black text-[10px] uppercase leading-tight">Paiement sécurisé avec<br/><span className="text-green-400">CB - PayPal</span></div></div>
             <div className="flex items-center gap-3"><div className="bg-yellow-500/20 p-2 rounded-full"><Euro className="w-5 h-5 text-yellow-400" /></div><div className="text-white font-black text-[10px] uppercase leading-tight">Si vous trouvez moins cher<br/><span className="text-yellow-400">Différence remboursée</span></div></div>

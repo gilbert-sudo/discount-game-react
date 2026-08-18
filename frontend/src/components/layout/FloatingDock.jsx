@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Home, Search, LayoutGrid, ShoppingCart, User, X, ChevronRight, Flame, Gamepad2, Disc, Film, Wand2, Music, Briefcase } from 'lucide-react';
 
 const FloatingDock = () => {
@@ -66,7 +67,7 @@ const FloatingDock = () => {
   }, [isMenuOpen]);
 
   const navItems = [
-    { icon: Home, label: 'Accueil', href: '#' },
+    { icon: Home, label: 'Accueil', to: '/' },
     { icon: Search, label: 'Recherche', href: '#' },
     { icon: LayoutGrid, label: 'Catégories', onClick: toggleMenu, isSpecial: true },
     { icon: ShoppingCart, label: 'Panier', href: '#', badge: '0' },
@@ -79,7 +80,7 @@ const FloatingDock = () => {
     { name: 'DVD', count: '3,102', color: 'bg-purple-500', icon: Film },
     { name: 'DVD Disney', count: '412', color: 'bg-pink-500', icon: Wand2 },
     { name: 'Musique', count: '12,045', color: 'bg-rose-500', icon: Music },
-    { name: 'Déstockage', count: '89', color: 'bg-[#ff4655]', icon: Flame },
+    { name: 'Déstockage', count: '89', color: 'bg-[#FF4D5A]', icon: Flame },
     { name: 'Pro', count: '', color: 'bg-slate-800', icon: Briefcase }
   ];
 
@@ -88,7 +89,7 @@ const FloatingDock = () => {
       {/* Overlay Menu */}
       <div 
         onClick={closeMenu}
-        className={`fixed inset-0 z-[100] bg-white/80 dark:bg-[#0B0F19]/90 backdrop-blur-2xl transition-all duration-500 flex flex-col justify-center cursor-pointer
+        className={`fixed inset-0 z-[100] bg-white/80 dark:bg-[#2A3B50]/90 backdrop-blur-2xl transition-all duration-500 flex flex-col justify-center cursor-pointer
           ${isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
       >
         <div className="absolute top-0 w-full p-4 flex justify-end md:p-6">
@@ -114,7 +115,7 @@ const FloatingDock = () => {
               <a 
                 key={idx} 
                 href="#" 
-                className={`group flex items-center justify-between p-5 rounded-2xl bg-slate-50 dark:bg-dark-card border border-slate-200 dark:border-white/5 hover:border-[#c000ff]/50 dark:hover:border-[#c000ff]/50 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(192,0,255,0.15)] hover:-translate-y-1 transform
+                className={`group flex items-center justify-between p-5 rounded-2xl bg-slate-50 dark:bg-dark-card border border-slate-200 dark:border-white/5 hover:border-[#FF4D5A]/50 dark:hover:border-[#FF4D5A]/50 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(255,77,90,0.15)] hover:-translate-y-1 transform
                   ${isMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}
                 `}
                 style={{ transitionDelay: `${isMenuOpen ? idx * 50 : 0}ms` }}
@@ -124,7 +125,7 @@ const FloatingDock = () => {
                     {cat.icon && <cat.icon className="w-5 h-5" />}
                   </div>
                   <div>
-                    <h3 className="font-semibold text-slate-900 dark:text-white group-hover:text-[#c000ff] transition-colors">
+                    <h3 className="font-semibold text-slate-900 dark:text-white group-hover:text-[#FF4D5A] transition-colors">
                       {cat.name}
                     </h3>
                     {cat.count && (
@@ -132,7 +133,7 @@ const FloatingDock = () => {
                     )}
                   </div>
                 </div>
-                <ChevronRight className="w-5 h-5 text-slate-400 group-hover:text-[#c000ff] group-hover:translate-x-1 transition-all" />
+                <ChevronRight className="w-5 h-5 text-slate-400 group-hover:text-[#FF4D5A] group-hover:translate-x-1 transition-all" />
               </a>
             ))}
           </div>
@@ -145,19 +146,31 @@ const FloatingDock = () => {
           ${isVisible ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-16 opacity-0 scale-95 pointer-events-none'}
         `}
       >
-        <div className="flex items-center gap-2 p-2 rounded-full bg-white/90 dark:bg-[#111827]/90 backdrop-blur-xl border border-slate-200/50 dark:border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.12)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.4)] dock-container">
+        <div className="flex items-center gap-2 p-2 rounded-full bg-white/90 dark:bg-[#35485E]/90 backdrop-blur-xl border border-slate-200/50 dark:border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.12)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.4)] dock-container">
           {navItems.map((item, index) => {
             const Icon = item.icon;
             return (
               <div key={index} className="relative group dock-item">
-                {item.href ? (
-                  <a 
-                    href={item.href}
-                    className="flex items-center justify-center w-12 h-12 rounded-full text-slate-600 dark:text-slate-400 hover:text-[#c000ff] dark:hover:text-[#c000ff] transition-colors relative"
+                {item.to ? (
+                  <Link 
+                    to={item.to}
+                    className="flex items-center justify-center w-12 h-12 rounded-full text-slate-600 dark:text-slate-400 hover:text-[#FF4D5A] dark:hover:text-[#FF4D5A] transition-colors relative"
                   >
                     <Icon className="w-6 h-6 transition-transform duration-200 icon-scale" strokeWidth={2} />
                     {item.badge && (
-                      <span className="absolute top-2 right-2 w-4 h-4 bg-[#c000ff] rounded-full text-[0.6rem] font-bold text-white flex items-center justify-center border-2 border-white dark:border-[#111827] dock-badge">
+                      <span className="absolute top-2 right-2 w-4 h-4 bg-[#FF4D5A] rounded-full text-[0.6rem] font-bold text-white flex items-center justify-center border-2 border-white dark:border-[#35485E] dock-badge">
+                        {item.badge}
+                      </span>
+                    )}
+                  </Link>
+                ) : item.href ? (
+                  <a 
+                    href={item.href}
+                    className="flex items-center justify-center w-12 h-12 rounded-full text-slate-600 dark:text-slate-400 hover:text-[#FF4D5A] dark:hover:text-[#FF4D5A] transition-colors relative"
+                  >
+                    <Icon className="w-6 h-6 transition-transform duration-200 icon-scale" strokeWidth={2} />
+                    {item.badge && (
+                      <span className="absolute top-2 right-2 w-4 h-4 bg-[#FF4D5A] rounded-full text-[0.6rem] font-bold text-white flex items-center justify-center border-2 border-white dark:border-[#35485E] dock-badge">
                         {item.badge}
                       </span>
                     )}
@@ -167,8 +180,8 @@ const FloatingDock = () => {
                     onClick={item.onClick}
                     className={`flex items-center justify-center w-12 h-12 rounded-full transition-colors relative ${
                       item.isSpecial 
-                        ? 'bg-gradient-to-tr from-[#c000ff] to-[#a855f7] text-white shadow-lg shadow-purple-500/30' 
-                        : 'text-slate-600 dark:text-slate-400 hover:text-[#c000ff] dark:hover:text-[#c000ff]'
+                        ? 'bg-gradient-to-tr from-[#FF4D5A] to-[#FF7582] text-white shadow-lg shadow-purple-500/30' 
+                        : 'text-slate-600 dark:text-slate-400 hover:text-[#FF4D5A] dark:hover:text-[#FF4D5A]'
                     }`}
                   >
                     <Icon className={`w-6 h-6 transition-transform duration-500 icon-scale ${isMenuOpen && item.isSpecial ? 'rotate-[360deg]' : ''}`} strokeWidth={item.isSpecial ? 2.5 : 2} />

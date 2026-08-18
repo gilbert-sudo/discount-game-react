@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { 
   ChevronRight, Home, Star, ShoppingCart, Info, 
-  Clock, Calendar, User, Users, Disc, Mic, Subtitles, Building2 
+  Clock, Calendar, User, Users, Disc, Mic, Subtitles, Building2, ArrowLeft 
 } from 'lucide-react';
 import TrendingDeals from '../components/home/TrendingDeals';
 
 const ProductDetails = () => {
   const { id } = useParams();
   const [quantity, setQuantity] = useState(1);
+  const navigate = useNavigate();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -44,17 +45,28 @@ const ProductDetails = () => {
 
   return (
     <div className="w-full animate-fade-in pb-12">
+      {/* Back Button Container */}
+      <div className="sticky top-[75px] sm:top-[90px] z-[50] py-2 -mt-2 mb-4 pointer-events-none flex items-start">
+        <button 
+          onClick={() => navigate(-1)}
+          className="pointer-events-auto flex items-center gap-2 px-5 py-2.5 bg-white/95 dark:bg-dark-card/95 backdrop-blur-md hover:bg-slate-50 dark:hover:bg-white/10 text-slate-700 dark:text-slate-300 rounded-full font-bold text-sm transition-all border border-slate-200/80 dark:border-white/20 shadow-lg hover:shadow-xl hover:-translate-y-0.5 w-fit"
+        >
+          <ArrowLeft className="w-4 h-4" />
+          Retour
+        </button>
+      </div>
+
       {/* Breadcrumbs */}
       <nav className="flex items-center text-sm text-slate-500 dark:text-slate-400 mb-8 overflow-x-auto whitespace-nowrap pb-2 no-scrollbar">
         {product.breadcrumbs.map((crumb, idx) => (
           <React.Fragment key={idx}>
             {idx === 0 ? (
-              <Link to={crumb.path} className="flex items-center hover:text-[#c000ff] transition-colors">
+              <Link to={crumb.path} className="flex items-center hover:text-[#FF4D5A] transition-colors">
                 <Home className="w-4 h-4 mr-1" />
                 {crumb.name}
               </Link>
             ) : (
-              <Link to={crumb.path} className="hover:text-[#c000ff] transition-colors">
+              <Link to={crumb.path} className="hover:text-[#FF4D5A] transition-colors">
                 {crumb.name}
               </Link>
             )}
@@ -69,15 +81,15 @@ const ProductDetails = () => {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 mb-16">
         {/* Left: Product Image */}
         <div className="lg:col-span-5 relative group">
-          <div className="absolute inset-0 bg-gradient-to-tr from-[#c000ff]/20 to-transparent blur-3xl -z-10 group-hover:from-[#c000ff]/30 transition-all duration-500 rounded-[2.5rem]"></div>
-          <div className="bg-slate-50 dark:bg-dark-card border border-slate-200 dark:border-white/5 rounded-[2.5rem] p-6 md:p-10 flex items-center justify-center relative overflow-hidden transition-all duration-300 hover:border-[#c000ff]/30 group-hover:shadow-[0_0_40px_rgba(192,0,255,0.1)] aspect-[3/4]">
+          <div className="absolute inset-0 bg-gradient-to-tr from-[#FF4D5A]/20 to-transparent blur-3xl -z-10 group-hover:from-[#FF4D5A]/30 transition-all duration-500 rounded-[2.5rem]"></div>
+          <div className="bg-slate-50 dark:bg-dark-card border border-slate-200 dark:border-white/5 rounded-[2.5rem] p-6 md:p-10 flex items-center justify-center relative overflow-hidden transition-all duration-300 hover:border-[#FF4D5A]/30 group-hover:shadow-[0_0_40px_rgba(255,77,90,0.1)] aspect-[3/4]">
             <img 
               src={product.image} 
               alt={product.title} 
               className="w-full max-w-[300px] object-cover rounded-2xl shadow-2xl transition-transform duration-700 group-hover:scale-105"
             />
             {product.condition === 'Nouveau' && (
-              <div className="absolute top-4 left-4 bg-gradient-to-r from-[#c000ff] to-[#ff4655] text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider shadow-lg">
+              <div className="absolute top-4 left-4 bg-gradient-to-r from-[#FF4D5A] to-[#FF4D5A] text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider shadow-lg">
                 Nouveau
               </div>
             )}
@@ -125,12 +137,12 @@ const ProductDetails = () => {
               >+</button>
             </div>
             
-            <button className="h-14 py-4 sm:py-0 w-full sm:w-auto px-6 bg-[#c000ff]/10 hover:bg-[#c000ff]/20 text-[#c000ff] rounded-full font-medium text-base transition-all duration-300 flex items-center justify-center gap-2 sm:flex-1 shrink-0">
+            <button className="h-14 py-4 sm:py-0 w-full sm:w-auto px-6 bg-[#FF4D5A]/10 hover:bg-[#FF4D5A]/20 text-[#FF4D5A] rounded-full font-medium text-base transition-all duration-300 flex items-center justify-center gap-2 sm:flex-1 shrink-0">
               <ShoppingCart className="w-5 h-5" />
               Ajouter au panier
             </button>
             
-            <button className="h-14 py-4 sm:py-0 w-full sm:w-auto px-6 bg-[#c000ff] hover:bg-[#a600dd] text-white rounded-full font-medium text-base shadow-[0_4px_14px_rgba(192,0,255,0.4)] hover:shadow-[0_6px_20px_rgba(192,0,255,0.6)] hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center sm:flex-1 shrink-0">
+            <button className="h-14 py-4 sm:py-0 w-full sm:w-auto px-6 bg-[#FF4D5A] hover:bg-[#E63946] text-white rounded-full font-medium text-base shadow-[0_4px_14px_rgba(255,77,90,0.4)] hover:shadow-[0_6px_20px_rgba(255,77,90,0.6)] hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center sm:flex-1 shrink-0">
               Acheter maintenant
             </button>
           </div>
@@ -141,7 +153,7 @@ const ProductDetails = () => {
               const Icon = detail.icon;
               return (
                 <div key={idx} className="flex items-start gap-3 p-3 rounded-2xl hover:bg-slate-50 dark:hover:bg-white/5 transition-colors group">
-                  <div className="p-2 bg-slate-100 dark:bg-white/5 rounded-full group-hover:bg-[#c000ff]/10 group-hover:text-[#c000ff] text-slate-400 transition-colors flex-shrink-0">
+                  <div className="p-2 bg-slate-100 dark:bg-white/5 rounded-full group-hover:bg-[#FF4D5A]/10 group-hover:text-[#FF4D5A] text-slate-400 transition-colors flex-shrink-0">
                     <Icon className="w-5 h-5" />
                   </div>
                   <div>
@@ -157,10 +169,10 @@ const ProductDetails = () => {
 
       {/* Synopsis / Description Section */}
       <div className="mb-12 sm:mb-16 bg-slate-50 dark:bg-dark-card border border-slate-200 dark:border-white/5 rounded-[2.5rem] p-6 sm:p-8 md:p-12 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-64 h-64 bg-[#c000ff]/5 rounded-full blur-3xl -z-10 translate-x-1/2 -translate-y-1/2"></div>
+        <div className="absolute top-0 right-0 w-64 h-64 bg-[#FF4D5A]/5 rounded-full blur-3xl -z-10 translate-x-1/2 -translate-y-1/2"></div>
         
         <div className="flex items-center gap-3 mb-4 sm:mb-6">
-          <div className="p-2.5 bg-[#c000ff]/10 text-[#c000ff] rounded-full flex-shrink-0">
+          <div className="p-2.5 bg-[#FF4D5A]/10 text-[#FF4D5A] rounded-full flex-shrink-0">
             <Info className="w-5 h-5 sm:w-6 sm:h-6" />
           </div>
           <h2 className="text-xl sm:text-2xl font-display font-bold text-slate-900 dark:text-white">Synopsis</h2>

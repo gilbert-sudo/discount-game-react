@@ -12,12 +12,12 @@ const TopBar = () => {
             <span className="lg:hidden">Acheteur</span>
           </a>
           <a href="#" className="hover:text-slate-900 dark:hover:text-white transition-colors hidden sm:flex items-center gap-2">
-            <Zap className="w-3.5 h-3.5 text-[#c000ff]" />
+            <Zap className="w-3.5 h-3.5 text-[#FF4D5A]" />
             Arrivages<span className="hidden lg:inline"> du jour</span>
           </a>
         </div>
         <div className="flex gap-4 lg:gap-6 items-center">
-          <a href="#" className="text-[#c000ff] hover:text-[#9900cc] dark:hover:text-white transition-colors hidden md:inline">
+          <a href="#" className="text-[#FF4D5A] hover:text-[#E63946] dark:hover:text-white transition-colors hidden md:inline">
             Revendez<span className="hidden lg:inline"> vos jeux</span>
           </a>
           <a href="#" className="hover:text-slate-900 dark:hover:text-white transition-colors hidden lg:inline">
